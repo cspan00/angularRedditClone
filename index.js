@@ -32,7 +32,6 @@ app.controller("postController", function($scope){
     $scope.comments = [];
     $scope.upVotes = 0;
     $scope.downVotes = 0;
-    $scope.totalVotes = 0;
     $scope.date = new Date();
 
   $scope.upVote = function() {
