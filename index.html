@@ -22,7 +22,7 @@
     </nav>
 
     <div class="container">
-      
+
       <form ng-submit="makePost()" ng-show="showForm">
         <fieldset class="form-group">
           <label for="title">Title</label>
@@ -44,7 +44,7 @@
       </form>
     </div>
 
-  <div ng-repeat="post in posts | filter:searchable">
+  <div ng-repeat="post in posts | filter:searchable | orderBy: '-votes'">
     <div ng-controller = "postController" class="row-fluid">
       <div class="media">
       </div>
@@ -56,8 +56,8 @@
       <div class="media-body">
         <p class="authorName">By {{post.author}} </p>
         <h4 class="title">{{post.title}}</h4> |
-        <span ng-click="upVote()" class="glyphicon glyphicon-arrow-up"><span class="upVote">{{upVotes}}</span></span>
-        <span ng-click="downVote()" class="glyphicon glyphicon-arrow-down"><span class="downVote">{{downVotes}}</span></span>
+        <span ng-click="upVote()" class="glyphicon glyphicon-arrow-up"><span class="upVote">{{post.votes}}</span></span>
+        <span ng-click="downVote()" class="glyphicon glyphicon-arrow-down"><span class="downVote"></span></span>
         <p>
           {{post.description}}
         </p>

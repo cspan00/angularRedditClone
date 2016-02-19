@@ -16,9 +16,11 @@ app.controller("masterController", function($scope) {
     post.author = $scope.author;
     post.imageURL = $scope.imageURL;
     post.description = $scope.description;
-    
+    post.votes = 0;
 
     $scope.posts.push(post);
+
+
     $scope.title = null;
     $scope.author = null;
     $scope.imageURL = null;
@@ -26,21 +28,24 @@ app.controller("masterController", function($scope) {
     console.log(post);
   }
 
+  $scope.upVote = function(){
+    this.$parent.post.votes ++;
+    console.log(this.$parent.post.votes);
+
+  }
+  $scope.downVote = function(){
+    this.$parent.post.votes --;
+
+  }
+
 });
 
 app.controller("postController", function($scope){
     $scope.comments = [];
-    $scope.upVotes = 0;
-    $scope.downVotes = 0;
+
     $scope.date = new Date();
 
-  $scope.upVote = function() {
 
-    $scope.upVotes++
-  }
-  $scope.downVote = function() {
-    $scope.downVotes--
-  }
 
   $scope.toggleCommentForm = function() {
     $scope.showCommentForm = !$scope.showCommentForm
