@@ -29,7 +29,7 @@ app.controller("masterController", function($scope) {
 });
 
 app.controller("postController", function($scope){
-
+    $scope.comments = [];
     $scope.upVotes = 0;
     $scope.downVotes = 0;
     $scope.totalVotes = 0;
@@ -43,6 +43,22 @@ app.controller("postController", function($scope){
     $scope.downVotes--
   }
 
+  $scope.toggleCommentForm = function() {
+    $scope.showCommentForm = !$scope.showCommentForm
+  }
+  $scope.toggleComments = function() {
+    $scope.showComments = !$scope.showComments
+  }
+
+  $scope.makeComment = function(){
+    var comment = {};
+    comment.author = $scope.author;
+    comment.comment = $scope.comment;
+    $scope.comments.push(comment)
+    $scope.author = null;
+    $scope.comment = null;
+
+  }
 
 
 
