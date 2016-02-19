@@ -16,7 +16,7 @@ app.controller("masterController", function($scope) {
     post.author = $scope.author;
     post.imageURL = $scope.imageURL;
     post.description = $scope.description;
-
+    
 
     $scope.posts.push(post);
     $scope.title = null;
