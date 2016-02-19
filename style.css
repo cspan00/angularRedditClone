@@ -1,0 +1,28 @@
+.barbara {
+  width: 100px;
+  height: 130px;
+}
+.row-fluid {
+  width: 80vw;
+  margin: 10px auto;
+  background-color: #f8f6f8;
+  padding: 20px;
+}
+.siteTitle {
+  display: inline-block;
+  padding-right: 10px;
+}
+.authorName {
+  float: right;
+}
+.title {
+  display: inline-block;
+}
+
+.submitPost{
+  display: inline-block;
+}
+.vote {
+  color: green;
+  font-weight: bold;   
+}
