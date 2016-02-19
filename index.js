@@ -17,6 +17,7 @@ app.controller("masterController", function($scope) {
     post.imageURL = $scope.imageURL;
     post.description = $scope.description;
 
+
     $scope.posts.push(post);
     $scope.title = null;
     $scope.author = null;
@@ -28,9 +29,11 @@ app.controller("masterController", function($scope) {
 });
 
 app.controller("postController", function($scope){
+
     $scope.upVotes = 0;
     $scope.downVotes = 0;
-
+    $scope.totalVotes = 0;
+    $scope.date = new Date();
 
   $scope.upVote = function() {
 
@@ -39,5 +42,8 @@ app.controller("postController", function($scope){
   $scope.downVote = function() {
     $scope.downVotes--
   }
+
+
+
 
 })
