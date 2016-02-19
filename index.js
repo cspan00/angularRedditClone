@@ -12,10 +12,13 @@ app.controller("masterController", function($scope) {
 
   $scope.makePost = function() {
     var post = {};
+
     post.title = $scope.title;
     post.author = $scope.author;
     post.imageURL = $scope.imageURL;
     post.description = $scope.description;
+    post.upVotes = 0;
+    post.downVotes = 0;
 
     $scope.posts.push(post);
     $scope.title = null;
@@ -27,9 +30,11 @@ app.controller("masterController", function($scope) {
 
 });
 
+
 app.controller("postController", function($scope){
-    $scope.upVotes = 0;
-    $scope.downVotes = 0;
+
+  $scope.upVotes = 0;
+  $scope.downVotes = 0;
 
 
   $scope.upVote = function() {

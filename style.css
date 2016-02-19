@@ -22,7 +22,11 @@
 .submitPost{
   display: inline-block;
 }
-.vote {
+.upVote {
   color: green;
-  font-weight: bold;   
+  font-weight: bold;
+}
+.downVote {
+  color: red;
+  font-weight: bold;
 }
